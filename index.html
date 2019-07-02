@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        OtteLab Turtlebot3 Documentation
+    </header>
+    <nav>
+        <div class="navbar">
+            <a class="active" href="#home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="#" class="dropLink">Turtlebot3</a>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Quickstart</a>
+                    <a href="#">Initial Setup</a>
+                    <a href="#">Workstation Setup</a>
+                    <a href="#">Troubleshooting</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="#" class="dropLink">Jetson Nano</a>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Quickstart</a>
+                    <a href="#">Initial Setup</a>
+                    <a href="#">ROS Install</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="#" class="dropLink">Mynt Eye</a>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Initial Setup</a>
+                    <a href="#">Examples</a>
+                    <a href="#">Jetson Nano Use</a>
+                </div>
+            </div>
+            <a href="#">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Main home page content -->
+    <section>
+        <div style="text-align: center">
+            <img src="turtlebot3_with_logo.png" alt="picture of the turtlebot3's formats (burger, waffle, waffle pi)">
+        </div>
+        <div class="sdark box">
+            This is a collection of information about setting up, using, and troubleshooting the turtlebot3. 
+            Most of the information on this site can be found elsewhere online (I try to attribute sources), but
+            this is supposed to be a convenient repository of information in a single place. If you find any
+            errors in this document, please contact me (contact info at bottom of page) or post an issue on the 
+            github. Formatting wise, you should know that:
+            <div class="cmd">$ this is a command you can type into a terminal</div>
+            and anytime you see <q>{ }</q> in a terminal
+        </div>
+    </section>
+
+    <footer>
+        <div style="float: left">
+            Source Code: https://github.com/dariusjlukas/turtlebotDocumentation.git
+        </div>
+        <div style="float: right; padding-right: 2em">
+            Contact Info: dlukas@umd.edu
+        </div>
+    </footer>
+</body>
+
+</html>
