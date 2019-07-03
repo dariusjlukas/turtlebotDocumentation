@@ -227,6 +227,11 @@ a{
   flex-flow: row wrap;
 }
 
+.boxContainer.centered{
+  justify-content: center;
+  align-items: center;
+}
+
 .light{
     background-color: #bdbdbd;
     color: #000000;

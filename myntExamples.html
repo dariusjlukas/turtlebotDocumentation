@@ -27,7 +27,65 @@
 
     <!-- Main page content -->
     <section>
-        
+        <div class="dark box">
+            Disclaimer: Everything on this page can be found in various places on <a target="_blank" href="https://mynt-eye-d-sdk.readthedocs.io/en/latest/installation/build_linux.html">this</a> site.
+        </div>
+        <div class="dark box">
+            <h4>Mynt Eye SDK samples:</h4>
+            <p>
+                Assuming you have installed the Mynt Eye SDK and have the Mynt Eye camera plugged into your computer
+                you can use the SDK samples to get data from the camera. Before running the samples, be sure to 
+                cd into the directory where you downloaded the SDK; for example:
+                <div class="cmd">
+                    $ cd MYNT-EYE-D-SDK/
+                </div>
+                To get a simple depth image from the camera, run:
+                <div class="cmd">
+                    $ ./samples/_output/bin/get_image
+                </div>
+                Press "q" to quit the example. This is one of the only samples that can run on USB 2.0. The output 
+                should look something like: 
+                <div class="boxContainer centered">
+                    <div class="box">
+                            <img style="width: 60%; display: block; margin-left: auto; margin-right: auto;" src="images/MyntDepthE1.png" alt="Color depth image from the Mynt Eye D">
+                    </div>
+                </div>
+                <br>
+                To do the same thing at 30fps (required USB 3.0) run:
+                <div class="cmd">
+                    $ ./samples/_output/bin/get_stereo_image
+                </div>
+                To view the data as a point-cloud, run:
+                <div class="cmd">
+                    $ ./samples/_output/bin/get_points
+                </div>
+                Note that the point cloud demo relies on the PCL library so if you did not install it earlier and 
+                this example failed, that is why. That being said, it may not be necessary to install it because
+                if your end goal is to use ROS I do not believe ROs requires the PCL library for point-cloud 
+                rendering. If the example worked, you should get output like this: 
+                <div class="boxContainer centered">
+                    <div class="box">
+                            <img style="width: 60%; display: block; margin-left: auto; margin-right: auto;" src="images/MyntDepthE2.png" alt="point cloud image from the Mynt Eye D">
+                    </div>
+                </div>
+                Also, you can click and hold to rotate the point cloud image:
+                <div class="boxContainer centered">
+                    <div class="box">
+                            <img style="width: 60%; display: block; margin-left: auto; margin-right: auto;" src="images/MyntDepthE3.png" alt="point cloud image from the Mynt Eye D">
+                    </div>
+                </div>
+                More samples can be found <a target="_blank" href="https://mynt-eye-d-sdk.readthedocs.io/en/latest/installation/build_linux.html">here</a> 
+                (or, you could use "ls" in the SDK directory to see what exists).
+            </p>
+        </div>
+
+        <div class="dark box">
+            <h4>ROS Usage:</h4>
+            <p>
+                If you have not installed the ROS packages for the Mynt Eye, head back to the 
+                <a href="myntSetup.html">setup</a> page first.
+            </p>
+        </div>
     </section>
 
     <div id="footer-placeholder">
