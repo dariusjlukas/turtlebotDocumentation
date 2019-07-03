@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git pull turtlebotDocumentation
+git pull
 http-server
