@@ -219,7 +219,14 @@ a{
 .box{
     margin: 1em;
     padding: 0.8em;
+    flex-grow: 1;
 }
+
+.boxContainer{
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .light{
     background-color: #bdbdbd;
     color: #000000;
