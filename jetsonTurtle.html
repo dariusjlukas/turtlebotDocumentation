@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Turtlebot Documentation</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <header>
+        Jetson Nano Turtlebot Usage
+    </header>
+
+    <div id="nav-placeholder">
+        <!-- Placeholder for the navigation bar -->
+    </div>
+    <!-- Script to load in the navigation bar -->
+    <script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+    </script>
+
+    <!-- Main page content -->
+    <section>
+        <div class="boxContainer">
+            <div class="box" style="text-align: center; margin-top: 5em">
+                <img class="rotateimg90" style="max-height: 90%; max-width: 50%" src="/images/turtleJetson1.jpg" alt="Image of the turtlebot with only the Jetson Nano SBC">
+            </div>
+        </div>
+        <div class="dark box">
+            The Jetson Nano can be used in conjunction with or instead of a Raspberry Pi 3 on the Turtlebot 3's. 
+            The main limitation of using the Jetson Nano is that it's only compatible with ROS Melodic, whereas the 
+            Raspberry Pi's use ROS Kinetic. At the time of writing this, almost all packages used by the turtlebot 
+            have been ported to ROS Melodic except for GMapping and possibly a few others. This is not necessarily 
+            a problem if you are running most of the turtlebot packages on a separate computer, since you can use 
+            an external computer running Kinetic to interface with the turtlebot running Melodic. It should also be 
+            noted that the Jetson Nano does not come with WiFi capabilities, so you will need to get a <span class="tooltip">NIC<span class="tooltiptext">Network Interface Card</span></span> if you 
+            will be using the Jetson Nano as the sole <span class="tooltip">SBC<span class="tooltiptext">Single Board Computer</span></span>. 
+            A compatible NIC can be found <a target="_blank" href="https://www.amazon.com/Intel-Dual-Band-Wireless-Ac-8265/dp/B01MZA1AB2/ref=as_li_ss_tl?keywords=intel+8265ngw&qid=1554739126&s=gateway&sr=8-1&linkCode=sl1&tag=jetsonhacks-20&linkId=ddc9ed0c07468175a00a20f14118fac5&language=en_US">here</a>, 
+            and a complete set of parts lists can be found under the Resources tab. <br> <br>
+
+            Alternatively, you can get the most compatibility by running both the Jetson Nano and a Raspberry Pi 
+            on the Turtlebot. The problems with doing that are physical space on the turtlebot, powering the 
+            Jetson Nano, and adding the Jetson Nano to the ROS network. Physical space can be solved by adding more 
+            plates to the turtlebot (if you run out of plates, they can be 3D printed relatively well). Powering 
+            can be difficult because the OpenCR normally provides 5v to the Raspberry Pi, which can be used directly 
+            if the Jetson Nano is used instead. If you want to use both the Jetson Nano and Raspberry Pi then the 
+            Jetson Nano will need a different power supply (because the one on the OpenCR is limited to 4A max). 
+            The OpenCR does have a power pass-through from the battery, which will need to be regulated to 5v. A 
+            buck converted can be used to do this, and a suitable one can be found <a href="#">here</a>. Ideally, 
+            the Jetson Nano would be powered from both of its 5v pins on the GPIO header (3A max each) and you would 
+            not need to worry about not having enough power for peripherals. That being said, you can get away with 
+            powering the Jetson through the barrel jack connector at a maximum of 4A or even through only one 5v header 
+            pin, although I would highly recommend using both header pins because the Jetson will still pull over 4A 
+            through the 3A rated pin, which could cause damage over time. 
+        </div>
+    </section>
+
+    
+</body>
+
+</html>

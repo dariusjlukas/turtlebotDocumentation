@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Turtlebot Documentation</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <header>
+        Jetson Nano Useful Info
+    </header>
+
+    <div id="nav-placeholder">
+        <!-- Placeholder for the navigation bar -->
+    </div>
+    <!-- Script to load in the navigation bar -->
+    <script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+    </script>
+
+    <!-- Main page content -->
+    <section>
+        <div class="dark box">
+            <h4>Specs: (summarized from <a target="_blank" href="https://developer.nvidia.com/embedded/jetson-nano-developer-kit">here</a>)</h4>
+            <ul>
+                <li>
+                    GPU: 128-core Maxwell
+                </li>
+                <li>
+                    CPU: Quad-core ARM A57 @ 1.43 GHz
+                </li>
+                <li>
+                    Memory: 4 GB 64-bit LPDDR4 25.6 GB/s 
+                </li>
+                <li>
+                    Internet Connectivity: Gigabit Ethernet, M.2 Key E slot for wireless NIC
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    
+</body>
+
+</html>
