@@ -1,0 +1,3 @@
+Git repo: https://github.com/dariusjlukas/turtlebotDocumentation.git
+URL (On Linksys lab network): 10.42.0.1:8080
+URL (On UMD wifi): 10.104.32.65:8080
