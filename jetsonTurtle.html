@@ -49,7 +49,8 @@
             Jetson Nano, and adding the Jetson Nano to the ROS network. Physical space can be solved by adding more 
             plates to the turtlebot (if you run out of plates, they can be 3D printed relatively well). Powering 
             can be difficult because the OpenCR normally provides 5v to the Raspberry Pi, which can be used directly 
-            if the Jetson Nano is used instead. If you want to use both the Jetson Nano and Raspberry Pi then the 
+            if the Jetson Nano is used instead. It should be noted that you must put a jumper on J48 to switch to powering 
+            from the barrel jack instead of from the USB port. If you want to use both the Jetson Nano and Raspberry Pi then the 
             Jetson Nano will need a different power supply (because the one on the OpenCR is limited to 4A max). 
             The OpenCR does have a power pass-through from the battery, which will need to be regulated to 5v. A 
             buck converted can be used to do this, and a suitable one can be found <a href="#">here</a>. Ideally, 

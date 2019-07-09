@@ -29,7 +29,32 @@
     <section>
         <div class="boxContainer">
             <div class="dark box">
-                <h4>Steps: </h4>
+                <h4>A Note About Powering the Jetson Nano:</h4>
+                In order to power the Jetson Nano from the barrel jack instead of from the micro USB port, you 
+                must add a jumper to J48. Also, be sure to use a power supply that outputs 5v and is rated for 
+                at least 4A.
+            </div>
+            <div class="dark box">
+                <h4>Hardware Setup:</h4>
+                Assuming you will be powering the Jetson Nano from the barrel jack:
+                <ol>
+                    <li>Put a jumper on J48, there should be ~99 jumper caps left in the lab</li>
+                    <li>Get a 5V 4A capable power adapter with a 5.5x2.1mm plug, NOT a 12v supply</li>
+                    <li>Plug in monitor, mouse, keyboard, and SD card (after flashing it; the SD card plugs in 
+                        on the underside of the Jetson Nano module)</li>
+                    <li>Plug in Jetson Nano</li>
+                </ol>
+                If you want WiFi capabilties, you must add a WiFi NIC to the M.2 Key E slot on the Jetson Nano,
+                located under the module itself. To do this, remove the Jetson Nano module by unscrewing the two 
+                screws holding it in place and pulling the side mounting arms out. Once removed, take out the screw 
+                in the M.2 Key E slot, insert the WiFi module, and secure it with the mounting screw you just removed. 
+                At this point you should also plug in the WiFi module's antennas (likely not included with the module 
+                itself) to the ports labeled "ANT" or something similar. You can then reinsert the Jetson Nano module, 
+                screw its fasteners back in, and you should be good to go. 
+                
+            </div>
+            <div class="dark box">
+                <h4>Software Steps: </h4>
                 <ol>
                     <li>
                         Put and OS on the Jetson Nano
@@ -51,7 +76,9 @@
                     pre-installed with the JetPack SDK and other jetson-specific software.
                     <br> <br>
                     TL;DR: jump <a target="_blank" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">here</a>
-                        to flash an SD card with the JetPack image.
+                        to flash an SD card with the JetPack image. When you are finished, insert the SD card into the 
+                        Jetson Nano (located on the underside of the module itself) and boot up the Jetson Nano, following 
+                        the first-time setup instructions. 
                 </p>
             </div>
 
