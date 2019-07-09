@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git pull
-http-server
+git pull &
+http-server &
