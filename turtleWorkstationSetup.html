@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Turtlebot Documentation</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <header>
+        Turtlebot3 Workstation Setup
+    </header>
+
+    <div id="nav-placeholder">
+        <!-- Placeholder for the navigation bar -->
+    </div>
+    <!-- Script to load in the navigation bar -->
+    <script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+    </script>
+
+    <!-- Main page content -->
+    <section>
+        <div style="text-align: center">
+            <img style="min-width:30%; max-width: 80%" src="images/ROSnetwork.jpeg" alt="Picture of a hypothetical ROS network">
+        </div>
+
+        <div class="dark box">
+            One of the great things about ROS is that since most tasks are done over the network through publisher/subscriber 
+            communication (see chapter 4 of <a target="_blank" href="http://www.pishrobot.com/wp-content/uploads/2018/02/ROS-robot-programming-book-by-turtlebo3-developers-EN.pdf">this</a> book to learn more) 
+            many tasks can run on any system in the network. For instance, in the turtlebot examples almost all of the ROS nodes are running on an outside 
+            computer instead of directly on the turtlebot. This provides convenience, ease of use, ease of debugging, and the ability to leverage immense 
+            amounts of processing power on your ROS-enabled robot. It should be noted that, unlike in the image above, the ROS network is not a cloud, and 
+            there is a <span class="tooltip">single master node<span class="tooltiptext">For ROS 1, this is not the case in ROS 2; you are likely using ROS 1</span></span> in your network and that device manages the ROS network, no magic or wizards involved. 
+            For this to work, you need to have a desktop computer (or any computer really) set up 
+            to work with the turtlebot. The basic criteria to do this are as follows:
+            <ol>
+                <li><span class="tooltip">Set up a computer with Ubuntu Linux 16.04<span class="tooltiptext" style="width: 24em; margin-left: -12em">You can technically run other Linux 
+                    distributions, and in fact you will likely need to if you are not using ROS Kinetic. There is also a way to use Windows with ROS. I highly 
+                    recommend a local installation of Ubuntu 16.04 if you are using ROS Kinetic as it will be the easiest to set up and likely the 
+                    easiest to use.
+                </span></span></li>
+                <li>Install ROS <span class="tooltip">Kinetic<span class="tooltiptext">At the time of writing this, 
+                    Kinetic gives the most compatibility with the turtlebots</span></span> on that computer</li>
+                <li>Install Turtlebot-specific packages on that computer</li>
+                <li>Make sure you are on the same network as the turtlebot</li>
+                <li>Run the turtlebot from your computer</li>
+            </ol>
+        </div>
+        <div class="dark box">
+            
+        </div>
+    </section>
+
+    
+</body>
+
+</html>
