@@ -79,17 +79,17 @@
             </p>
         </div>
 
-        <div class="dark box">
+        <div class="dark box" id="ros">
             <h4>ROS Usage:</h4>
             <p>
                 If you have not installed the ROS packages for the Mynt Eye, head back to the 
                 <a href="myntSetup.html">setup</a> page first.
                 <br>
-                Start by launching the ROS master by typing:
+                Start by launching the ROS master on the computer you configured as the master with ROS_MASTER_URI by typing:
                 <div class="cmd">
                     $ roscore
                 </div>
-                Then, cd into the directory where you installed the Mynt Eye SDK and launch the display package:
+                Then, cd into the directory where you installed the Mynt Eye SDK (likely cd ~/MYNT-EYE-D-SDK) and launch the display package:
                 <div class="cmd">
                     $ source ./wrappers/ros/devel/setup.bash <br>
                     $ roslaunch mynteye_wrapper_d display.launch
@@ -136,7 +136,7 @@
             <div class="cmd">
                 $ git clone -b docker_feat https://github.com/slightech/MYNT-EYE-VINS-FUSION-Samples.git <br>
                 $ cd MYNT-EYE-VINS-FUSION-Sample/docker <br>
-                $ make build
+                $ sudo make build
             </div>
             Finally, run the Mynt Eye node and launch VINS-Fusion:
             <div class="cmd">

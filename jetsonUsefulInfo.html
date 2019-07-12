@@ -28,7 +28,7 @@
     <!-- Main page content -->
     <section>
         <div class="dark box">
-            <h4>Specs: (summarized from <a target="_blank" href="https://developer.nvidia.com/embedded/jetson-nano-developer-kit">here</a>)</h4>
+            <h4>Specs (summarized from <a target="_blank" href="https://developer.nvidia.com/embedded/jetson-nano-developer-kit">here</a>):</h4>
             <ul>
                 <li>
                     GPU: 128-core Maxwell
@@ -64,9 +64,101 @@
             <h4>Useful Commands:</h4>
             <ul>
                 <li>
-                    jtop - Displays performance metrics
+                    Display performance metrics:
+                    <div class="cmd">
+                        $ sudo jtop
+                    </div>
+                    To install jtop, run:
+                    <div class="cmd">
+                        $ sudo apt install python-pip<br>
+                        $ sudo -H pip install jetson-stats
+                    </div>
+                </li>
+                <li>
+                    Display the power mode (learn more <a target="_blank" href="https://www.jetsonhacks.com/2019/04/10/jetson-nano-use-more-power/">here</a>):
+                    <div class="cmd">
+                        $ sudo nvpmodel -q
+                    </div>
+                </li>
+                <li>
+                    Set the power mode to 5W (learn more <a target="_blank" href="https://www.jetsonhacks.com/2019/04/10/jetson-nano-use-more-power/">here</a>):
+                    <div class="cmd">
+                        $ sudo nvpmodel -m1
+                    </div>
+                </li>
+                <li>
+                    Set the power mode to max (learn more <a target="_blank" href="https://www.jetsonhacks.com/2019/04/10/jetson-nano-use-more-power/">here</a>):
+                    <div class="cmd">
+                        $ sudo nvpmodel -m0
+                    </div>
+                </li>
+                <li>
+                    Max out the clock speeds for maximum performance, without overclocking (learn more <a target="_blank" href="https://www.jetsonhacks.com/2019/04/10/jetson-nano-use-more-power/">here</a>):
+                    <div class="cmd">
+                        $ sudo jetson_clocks
+                    </div>
                 </li>
             </ul>
+        </div>
+        <div class="dark box">
+            <h4>Disabling the Desktop:</h4>
+            <p>
+                If you want to stop the Jetson Nano from automatically booting into a desktop environnement to 
+                save resources, you can follow the steps found <a target="_blank" href="https://devtalk.nvidia.com/default/topic/1050739/jetson-nano/how-to-boot-jetson-nano-in-text-mode-/">here</a> 
+                and possibly also <a target="_blank" href="https://askubuntu.com/questions/771837/how-to-create-ubuntu-server-16-04-autologin">here</a> or try the steps bellow: <br>
+                Note: before continuing, you will need to be connected to the Jetson Nano directly (not by ssh) because 
+                these steps are likely to disable ssh functionality temporarily. 
+                <ol>
+                    <li>
+                        Log into the Jetson Nano and change the <span class="tooltip">systemctl<span class="tooltiptext"><a target="_blank" href="https://www.linode.com/docs/quick-answers/linux-essentials/introduction-to-systemctl/">guide</a></span></span> default to not open a desktop by typing:
+                        <div class="cmd">
+                            $ sudo systemctl set-default multi-user.target
+                        </div>
+                    </li>
+                    <li>
+                        Reboot the system. You should be dropped into the <span class="tooltip">tty1<span class="tooltiptext"><a target="_blank" href="https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals">Wikipedia article</a></span></span> 
+                        console. This is good, it means you have sucessfully disabled starting the desktop by default. If you would like to start a GUI, type either:
+                        <div class="cmd">
+                            $ sudo systemctl start gdm3.service
+                        </div>
+                        or
+                        <div class="cmd">
+                            $ startx
+                        </div>
+                    </li>
+                    <li>
+                        At this point you should try rebooting the jetson nano and SSHing in before logging in locally. If you run into problems, 
+                        try logging into the Jetson Nano locally, and see if you can SSH in. If you can only SSH when logged in locally, you can 
+                        follow the remaining steps to set up auto-login on tty1 (taken from <a target="_blank" href="https://askubuntu.com/questions/771837/how-to-create-ubuntu-server-16-04-autologin">here</a>).
+                    </li>
+                    <li>
+                        Logged into the Jetson Nano locally, run:
+                        <div class="cmd">
+                            $ sudo systemctl edit getty@tty1
+                        </div>
+                        And add these lines:
+                        <div class="cmd">
+                            [Service]<br>
+                            ExecStart=<br>
+                            ExecStart=-/sbin/agetty -a <USERNAME> --noclear %I $TERM<br>
+                        </div>
+                    </li>
+                    <li>
+                        Reboot the Jetson Nano and you should automatically log into tty1 and be able to SSH in.
+                    </li>
+                </ol>
+            </p>
+        </div>
+        <div class="dark box">
+            <h4>Enabling the desktop:</h4>
+            If you would like to start the desktop for this session only, type:
+            <div class="cmd">
+                $ sudo systemctl start gdm3.service 
+            </div>
+            If you want the system to start the desktop at boot by default, type:
+            <div class="cmd">
+                $ sudo systemctl set-default graphical.target
+            </div>
         </div>
         <div class="dark box">
             <h4>Other Resources:</h4>
@@ -78,6 +170,7 @@
             <h4>Known Issues:</h4>
             <ul>
                 <li>Graphics examples segfault when run, not sure why</li>
+                <li>In jtop, PMIC reads as 100 degrees celsius. I guarantee the power management integrated circuit is not at 100C all the time.</li>
             </ul>
         </div>
         <div class="dark box">
