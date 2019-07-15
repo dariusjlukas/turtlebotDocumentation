@@ -140,7 +140,7 @@
                         <div class="cmd">
                             [Service]<br>
                             ExecStart=<br>
-                            ExecStart=-/sbin/agetty -a <span class="tooltip">{USERNAME}<span class="tooltiptext">
+                            ExecStart=-/sbin/agetty -a <span class="tooltip" style="text-decoration: underline dotted green;">{USERNAME}<span class="tooltiptext" style="width: 10em">
                                 Your username is the thing to the left of the "@" symbol in the terminal; ie. ottelab is the username in ottelab@ottelab-Jetson1:$</span></span>
                                  --noclear %I $TERM<br>
                         </div>
@@ -151,6 +151,7 @@
                 </ol>
             </p>
         </div>
+        
         <div class="dark box">
             <h4>Enabling the desktop:</h4>
             If you would like to start the desktop for this session only, type:
@@ -173,6 +174,10 @@
                 $ ntptime
             </div>
             It should come back with the correct date-time and return code 0 (OK)
+        </div>
+        <div class="dark box">
+            <h4>You disabled the GUI and everything is awesome except you want to open more than one terminal</h4>
+            tmux is the program you seek. Learn more <a target="_blank" href="https://hackernoon.com/a-gentle-introduction-to-tmux-8d784c404340">here</a>.
         </div>
         <div class="dark box">
             <h4>Other Resources:</h4>
