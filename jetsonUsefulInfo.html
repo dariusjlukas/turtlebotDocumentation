@@ -140,7 +140,9 @@
                         <div class="cmd">
                             [Service]<br>
                             ExecStart=<br>
-                            ExecStart=-/sbin/agetty -a {USERNAME} --noclear %I $TERM<br>
+                            ExecStart=-/sbin/agetty -a <span class="tooltip">{USERNAME}<span class="tooltiptext">
+                                Your username is the thing to the left of the "@" symbol in the terminal; ie. ottelab is the username in ottelab@ottelab-Jetson1:$</span></span>
+                                 --noclear %I $TERM<br>
                         </div>
                     </li>
                     <li>
@@ -159,6 +161,18 @@
             <div class="cmd">
                 $ sudo systemctl set-default graphical.target
             </div>
+        </div>
+        <div class="dark box">
+            <h4>Problems with SSH and pining the Jetson Nano</h4>
+            Try installing <span class="tooltip">ntp<span class="tooltiptext">Network Time Protocol</span></span> by:
+            <div class="cmd">
+                $ sudo apt install ntp
+            </div>
+            Then, check that the time is correct by typing:
+            <div class="cmd">
+                $ ntptime
+            </div>
+            It should come back with the correct date-time and return code 0 (OK)
         </div>
         <div class="dark box">
             <h4>Other Resources:</h4>
