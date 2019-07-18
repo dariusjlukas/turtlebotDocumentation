@@ -27,12 +27,24 @@
 
     <!-- Main page content -->
     <section>
-        <div class="boxContainer">
-            <div class="box" style="text-align: center; margin-top: 5em">
-                <img class="rotateimg90" style="max-height: 90%; max-width: 50%" src="/images/turtleJetson1.jpg" alt="Image of the turtlebot with only the Jetson Nano SBC">
+        <!-- <div class="boxContainer" style="margin-top: 5em; width: 100%;">
+            <div class="box">
+                <img class="rotateimg90" style="max-height: 90%; max-width: 50%; float: left" src="/images/turtleJetson1.jpg" alt="Image of the turtlebot with only the Jetson Nano SBC">
+            </div>
+            <div class="box">
+                <img class="rotateimg90" style="max-height: 90%; max-width: 50%; float: left;" src="images/turtleJetsonPi.jpg" alt="Turtlebot with Jetson Nano and Raspberry Pi">
+            </div>
+        </div> -->
+        <div class="row" style="padding-top: 5em; padding-bottom: 5em;">
+            <div class="column">
+                <img class="rotateimg90" style="max-height: 90%; max-width: 100%; float: left" src="/images/turtleJetson1.jpg" alt="Image of the turtlebot with only the Jetson Nano SBC">
+            </div>
+            <div class="column">
+                <img class="rotateimg90" style="max-height: 90%; max-width: 100%; float: left;" src="images/turtleJetsonPi.jpg" alt="Turtlebot with Jetson Nano and Raspberry Pi">
             </div>
         </div>
         <div class="dark box">
+            <h4>Overview</h4>
             The Jetson Nano can be used in conjunction with or instead of a Raspberry Pi 3 on the Turtlebot 3's. 
             The main limitation of using the Jetson Nano is that it's only compatible with ROS Melodic, whereas the 
             Raspberry Pi's use ROS Kinetic. At the time of writing this, almost all packages used by the turtlebot 
@@ -59,6 +71,13 @@
             powering the Jetson through the barrel jack connector at a maximum of 4A or even through only one 5v header 
             pin, although I would highly recommend using both header pins because the Jetson will still pull over 4A 
             through the 3A rated pin, which could cause damage over time. 
+        </div>
+
+        <div class="dark box">
+            <h4>Jetson+Raspberry Pi Architecture</h4>
+            Turtlebot #4 is configured with both a Jetson Nano and Raspberry Pi, so there are a few important architecture 
+            differences compared to a Turtlebot with only one <span class="tooltip">SBC<span class="tooltiptext">Single Board Computer</span></span>, 
+            namely the connection between the Pi and Jetson Nano, the Jetson Nano power delivery, and the hardware distribution.
         </div>
     </section>
 
