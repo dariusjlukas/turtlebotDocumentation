@@ -77,7 +77,17 @@
             <h4>Jetson+Raspberry Pi Architecture</h4>
             Turtlebot #4 is configured with both a Jetson Nano and Raspberry Pi, so there are a few important architecture 
             differences compared to a Turtlebot with only one <span class="tooltip">SBC<span class="tooltiptext">Single Board Computer</span></span>, 
-            namely the connection between the Pi and Jetson Nano, the Jetson Nano power delivery, and the hardware distribution.
+            namely the connection between the Pi and Jetson Nano, the Jetson Nano power delivery, and the distribution of control.
+            The Jetson and Pi are both on the same Wifi network so it is possible for them to communicate that way. The problem is 
+            that there is limited bandwidth and high latency, around 100 ms based on pings. So, as an alternative to communicating 
+            over Wifi there is also an <span class="tooltip">ethernet<span class="tooltiptext">A spliced category or "cat" 5e 
+                cable to be precise</span></span> cable running between the Jetson and Pi which provides a gigabit, sub 1 ms 
+            latency connection between them. One way to have the traffic between the Jetson and Pi go through the ethernet 
+            cable and all other traffic go over Wifi is to run the master node on the Pi, and then on the Jetson set the 
+            master node as the Pi's IP address over the ethernet cable. All other devices can then use the Pi's Wifi IP address. 
+            This way communication between the Pi and Jetson will use the ethernet cable but outside computers can still be on the 
+            same ROS network. This is obviously problematic though if you want to run multiple Turtlebots like this at the same 
+            time, in which case you may need to find a better solution.
         </div>
     </section>
 
