@@ -1,0 +1,30 @@
+{
+  "name": "turtlebotdocumentation",
+  "version": "1.0.0",
+  "description": "Documentation for Turtlebots",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-server": "^0.11.1",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "electron .",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariusjlukas/turtlebotDocumentation.git"
+  },
+  "keywords": [
+    "Turtlebot",
+    "Documentation"
+  ],
+  "author": "Darius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dariusjlukas/turtlebotDocumentation/issues"
+  },
+  "homepage": "https://github.com/dariusjlukas/turtlebotDocumentation#readme"
+}
