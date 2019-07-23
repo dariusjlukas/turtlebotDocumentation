@@ -8,7 +8,9 @@
     "http-server": "^0.11.1",
     "jquery": "^3.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.7"
+  },
   "scripts": {
     "test": "electron .",
     "start": "electron ."
