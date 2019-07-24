@@ -1,0 +1,9 @@
+{
+    "icon": "assets/icons/png/turtle_icon.png_64x64.png",
+    "categories": [
+      "Utility"
+    ],
+    "lintianOverrides": [
+      "changelog-file-missing-in-native-package"
+    ]
+}

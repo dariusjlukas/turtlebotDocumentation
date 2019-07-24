@@ -15,7 +15,9 @@
   },
   "scripts": {
     "test": "electron .",
-    "start": "electron ."
+    "start": "electron .",
+    "package-linux": "electron-packager .  turtlebotDocumentation --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds --executableName=turtlebotdocumentation",
+    "create-debian-installer": "electron-installer-debian --src release-builds/turtlebotDocumentation-linux-x64 --dest release-builds/ --arch amd64 --config debian.json"
   },
   "repository": {
     "type": "git",
