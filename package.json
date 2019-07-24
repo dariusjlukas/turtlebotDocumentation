@@ -7,7 +7,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "http-server": "^0.11.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "electron": "^5.0.7",
@@ -16,7 +17,7 @@
   "scripts": {
     "test": "electron .",
     "start": "electron .",
-    "package-linux": "electron-packager .  turtlebotDocumentation --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds --executableName=turtlebotdocumentation",
+    "package-linux": "electron-packager .  turtlebotDocumentation --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/turtle_icon.png_64x64.png --prune=true --out=release-builds --executableName=turtlebotdocumentation",
     "create-debian-installer": "electron-installer-debian --src release-builds/turtlebotDocumentation-linux-x64 --dest release-builds/ --arch amd64 --config debian.json"
   },
   "repository": {
