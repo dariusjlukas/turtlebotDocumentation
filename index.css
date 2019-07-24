@@ -386,3 +386,22 @@ input[type=button], input[type=submit], input[type=reset] {
   flex: 50%;
   padding: 5px;
 }
+
+.download {
+  background-color: #eee0e0; /* Green */
+  border: none;
+  color: #1b1b1b;
+  padding: .8em 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.download:hover {
+  background-color: #9fa8da;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
