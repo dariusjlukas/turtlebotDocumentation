@@ -66,6 +66,20 @@
                 </p>
             </div>
 
+            <button class="accordion">You open rviz and the laser data and Turtlebot model are missing.</button>
+            <div class="panel">
+                This is likely because you either have not launched turtlebot3_remote or it is launched but pointing to the 
+                wrong master. If you have not launched it, you can do so by typing:
+                <div class="cmd">
+                    $ roslaunch turtlebot3_bringup turtlebot3_remote.launch
+                </div>
+                on your computer. If it is launched, make sure it has the right ROS_MASTER_URI (and that you sourced 
+                <a target="_blank" href="https://unix.stackexchange.com/questions/129143/what-is-the-purpose-of-bashrc-and-how-does-it-work">.bashrc</a>
+                ).
+                It is important to remember that ROS nodes do not necessarily check if they can communicate with the master, and 
+                the turtlebot_remote package may not display any errors.
+            </div>
+
             <button class="accordion">Turtlebot is beeping.</button>
             <div class="panel">
                 <p>
