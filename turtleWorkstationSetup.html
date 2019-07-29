@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <title>Turtlebot Documentation</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
 </head>
 
 <body>
@@ -72,6 +73,7 @@
                 $ cd ~/catkin_ws/src/<br>
                 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git<br>
                 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3.git<br>
+                $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git<br>
                 $ cd ~/catkin_ws && catkin_make<br>
             </div>
             Now, the network needs to be set up. The basic topology of a ROS network consists of a single master 
@@ -114,10 +116,13 @@
                 $ nano ~/.bashrc
             </div>
             If there are already export lines for master and hostname, modify them, if not add them, so that there 
-            are two lines in your .bashr file that look like:
+            are three lines in your .bashr file that look like:
             <div class="cmd">
                 export ROS_MASTER_URI=http://{YOUR_IP_HERE}:11311<br>
-                export ROS_HOSTNAME={YOUR_IP_HERE}
+                export ROS_HOSTNAME={YOUR_IP_HERE}<br>
+                <span class="tooltip">export TURTLEBOT3_MODEL=burger<span class="tooltiptext" style="width: 12em; margin-left: -6em">
+                    This line tells ROS that you are using the Turtlebot3 Burger model, and is necessary for running simulations
+                </span></span>
             </div>
             After editing your .bashrc file, you need to source it for changes to take effect (or you could close 
             and re-open all your terminals, but sourcing is faster). You can do this by typing:

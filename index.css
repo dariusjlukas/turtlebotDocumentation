@@ -194,10 +194,11 @@ nav{
 
 .panel {
   padding: 0 18px;
+  margin: .5em;
   background-color: #1b1b1b;
   max-height: 0;
   overflow: hidden;
-  font-size: 0.8em;
+  font-size: 0.9em;
   transition: max-height 0.2s ease-out;
 }
 
