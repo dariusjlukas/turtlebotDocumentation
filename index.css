@@ -36,7 +36,7 @@ nav{
     padding: 0.6em;
     /* padding-right: 0.5em; */
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1em;
   }
   
   .navbar .linkButton {
@@ -79,11 +79,12 @@ nav{
     float: left;
     overflow: hidden;
     margin: 0;
+    padding: 0;
   }
 
   /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 1em;
     border: none;
     outline: none;
     color: white;
@@ -125,6 +126,7 @@ nav{
   }
 
   .dropLink{
+    font-size: 1em;
     padding: 0;
     margin: 0;
 }
